@@ -13,9 +13,12 @@ app = FastAPI(title="Predicting Wine Class with batching")
 #    clf = pickle.load(file)
 
 # new model
-with open("models/wine-95.pkl", "rb") as file:
+# with open("models/wine-95.pkl", "rb") as file:
+#    clf = pickle.load(file)
+
+# using the fixed new model
+with open("models/wine-95-fixed.pkl", "rb") as file:
     clf = pickle.load(file)
-    
 
 class Wine(BaseModel):
     batches: List[conlist(item_type=float, min_items=13, max_items=13)]
